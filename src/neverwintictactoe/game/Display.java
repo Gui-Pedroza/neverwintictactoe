@@ -1,4 +1,4 @@
-package neverwintictactoe;
+package neverwintictactoe.game;
 
 public class Display {
 	
