@@ -2,9 +2,7 @@ package neverwintictactoe.model;
 
 public class Player {
 	
-	private String mark;
-	
-	
+	private String mark;	
 	
 	public Player(String mark) {
 		super();
@@ -12,15 +10,12 @@ public class Player {
 	}
 
 	public String getMark() {
-		return mark;
+		return mark; 
 	}
 
 	public void setMark(String mark) {
 		this.mark = mark;
 	}
-
-	public String placeMark() {
-		return "[ " + mark + " ]"; 
-	}
-
+	
+	
 }

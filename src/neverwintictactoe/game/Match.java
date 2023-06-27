@@ -1,17 +1,49 @@
 package neverwintictactoe.game;
 
-import neverwintictactoe.model.BotPlayer;
-import neverwintictactoe.model.HumanPlayer;
-import neverwintictactoe.model.Player;
-
-public class Match {
-
-	private final String x = "X";
-	private final String o = "O";
+public class Match {	
 	
-	Player human = new HumanPlayer(x);
-	Player bot = new BotPlayer(o);
+	private static final String x = "X";
+	private static final String o = "O";
+	
+	private Board board;
 	
 	
+	// são 8 condicões de vitória
 	
+	public boolean xWins(Board board) {
+		// verifica vitória em linhas
+		if ((board.marks[0][0] == x && board.marks[0][1] == x && board.marks[0][2] == x) ||
+				(board.marks[1][0] == x && board.marks[1][1] == x && board.marks[1][2] == x) ||
+				(board.marks[2][0] == x && board.marks[2][1] == x && board.marks[2][2] == x)) {
+			return true;
+		// verifica a vitória em colunas	
+		} else if ((board.marks[0][0] == x && board.marks[1][0] == x && board.marks[2][0] == x) ||
+				(board.marks[0][1] == x && board.marks[1][1] == x && board.marks[1][2] == x) ||
+				(board.marks[0][2] == x && board.marks[1][2] == x && board.marks[2][2] == x)) {
+			return true;
+		} else if ((board.marks[0][0] == x && board.marks[1][1] == x && board.marks[2][2] == x) ||
+			(board.marks[0][2] == x && board.marks[1][1] == x && board.marks[2][0] == x)) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean oWins(Board board) {
+		// verifica vitória em linhas
+		if ((board.marks[0][0] == o && board.marks[0][1] == o && board.marks[0][2] == o) ||
+				(board.marks[1][0] == x && board.marks[1][1] == x && board.marks[1][2] == o) ||
+				(board.marks[2][0] == o && board.marks[2][1] == o && board.marks[2][2] == o)) {
+			return true;
+		// verifica a vitória em colunas	
+		} else if ((board.marks[0][0] == o && board.marks[1][0] == o && board.marks[2][0] == o) ||
+				(board.marks[0][1] == o && board.marks[1][1] == o && board.marks[1][2] == o) ||
+				(board.marks[0][2] == o && board.marks[1][2] == o && board.marks[2][2] == o)) {
+			return true;
+		} else if ((board.marks[0][0] == o && board.marks[1][1] == o && board.marks[2][2] == o) ||
+			(board.marks[0][2] == o && board.marks[1][1] == o && board.marks[2][0] == o)) {
+			return true;
+		}
+		return false;
+	}
+				
 }
