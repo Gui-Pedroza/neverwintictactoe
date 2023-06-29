@@ -1,10 +1,12 @@
 package neverwintictactoe.game;
 
+import neverwintictactoe.model.Player;
+
 public class Board {
 	
 	private int row;
 	private int column;
-	protected String[][] marks;
+	public String[][] marks;	
 	
 	
 	public Board() {		
@@ -23,8 +25,8 @@ public class Board {
 		this.column = column;
 	}
 	
-	public void setMark(String mark, int row, int column) {
-		marks[row][column] = mark;
+	public void placeMark(Player player, int row, int column) {
+		marks[row][column] = player.getMark();
 	}
 	
 	

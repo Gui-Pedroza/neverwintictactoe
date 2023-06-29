@@ -2,7 +2,11 @@ package neverwintictactoe.model;
 
 public class Player {
 	
-	private String mark;	
+	private String mark;
+	
+	public Player() {
+		
+	}
 	
 	public Player(String mark) {
 		super();

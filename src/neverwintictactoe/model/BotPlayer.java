@@ -1,10 +1,11 @@
 package neverwintictactoe.model;
 
-public class BotPlayer extends Player {
+import neverwintictactoe.game.Board;
 
-	public BotPlayer(String mark) {
-		super(mark);		
-	}
+public class BotPlayer extends Player {
 	
+	public void placeMark(Board board, int row, int column) {
+		board.marks[row][column] = this.getMark();
+	}
 
 }
