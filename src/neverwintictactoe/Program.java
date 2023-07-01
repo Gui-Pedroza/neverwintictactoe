@@ -38,10 +38,11 @@ public class Program {
 			bot.setMark("O");
 		}
 		
-		// TODO a marcação no tabuleiro vai ser do board ou do player?
+		// TODO começar a testar a marcação no tabuleiro e a lógica da exibição na tela
 		
 		while (!match.xWins(board) || !match.oWins(board)) {		
 			display.printMarks(board);
+			
 		}
 		
 	}

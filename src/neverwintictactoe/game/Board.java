@@ -29,6 +29,15 @@ public class Board {
 		marks[row][column] = player.getMark();
 	}
 	
-	
+	public boolean isThereAMark() {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (marks[i][j].equals("X") || marks[i][j].equals("O")) {
+					return true;
+				}
+			}			
+		}
+		return false;
+	}
 
 }
