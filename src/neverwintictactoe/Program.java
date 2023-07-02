@@ -41,19 +41,22 @@ public class Program {
 		System.out.println("To place a mark, simply type number of row and column you want to mark");
 		System.out.println("For example: 12 equals first row, second column");
 		
-		// TODO começar a testar a marcação no tabuleiro e a lógica da exibição na tela
-		
-		while (!match.xWins(board) || !match.oWins(board)) {		
+				
+		while (!match.xWins(board) && !match.oWins(board)) {		
 			Display.clearScreen();
+			display.printMarks(board);
+			System.out.println();
 			if (match.getTurn() % 2 == 0) {
 				System.out.println("Your turn: please place your mark");
 				String move = sc.nextLine();
 				int row = Character.getNumericValue(move.charAt(0));
-				System.out.println(row);
-			}
-			display.printMarks(board);
-			
+				int column = Character.getNumericValue(move.charAt(1));
+				
+				board.placeMark(human, row, column);
+			}			
 		}
+		Display.clearScreen();
+		display.printEndMatch(board, match);
 		
 	}
 

@@ -27,21 +27,14 @@ public class Board {
 	}
 	
 	public void placeMark(Player player, int row, int column) {
-		if (isThereAMark()) {
+		if (isThereAMark(row, column)) {
 			throw new GameException("There's already a mark, chose another grid");
 		}
 		marks[row-1][column-1] = player.getMark();
 	}
 	
-	public boolean isThereAMark() {
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				if (marks[i][j].equals("X") || marks[i][j].equals("O")) {
-					return true;
-				}
-			}			
-		}
-		return false;
+	public boolean isThereAMark(int row, int column) {
+		return marks[row-1][column-1].equals("X") || marks[row-1][column-1].equals("O");
 	}
 	
 	public boolean positionExists(int row, int column) {
