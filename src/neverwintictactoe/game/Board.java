@@ -1,5 +1,6 @@
 package neverwintictactoe.game;
 
+import neverwintictactoe.exception.GameException;
 import neverwintictactoe.model.Player;
 
 public class Board {
@@ -26,7 +27,10 @@ public class Board {
 	}
 	
 	public void placeMark(Player player, int row, int column) {
-		marks[row][column] = player.getMark();
+		if (isThereAMark()) {
+			throw new GameException("There's already a mark, chose another grid");
+		}
+		marks[row-1][column-1] = player.getMark();
 	}
 	
 	public boolean isThereAMark() {
@@ -38,6 +42,10 @@ public class Board {
 			}			
 		}
 		return false;
+	}
+	
+	public boolean positionExists(int row, int column) {
+		return (row < 1 && row > 3) || (column < 1 && column > 3); 
 	}
 
 }
